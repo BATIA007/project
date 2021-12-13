@@ -33,6 +33,8 @@ const prizes = [
     }
   ];
 
+const catalogThank = document.querySelector('.catalog');
+
 const wheel = document.querySelector('.wheel');
 const spinner = wheel.querySelector('.wheel__segments');
 const trigger = document.querySelectorAll('.thankyou__button');
@@ -123,9 +125,9 @@ const selectPrize = () => {
     discountElem2.textContent = prizeNodes[selected].textContent.replace('%', ' %') + '!';
     wheel.classList.add('wheel__controller-active');
     discount.classList.add('discount-active');
-    document.body.style.overflowY = 'auto';
     document.querySelector('.thankyou__header').classList.add('thankyou__header-active');
     setTimeout(() => {
+      catalogThank.style.display = 'block';
       document.querySelector('.catalog__title').scrollIntoView({behavior: 'smooth', block: 'start'})
     }, 3500)
   };

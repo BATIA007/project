@@ -6,7 +6,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
     mobileBut.addEventListener('click', e => {
         document.body.classList.toggle('overflow-y-hidden');
-        document.querySelector('.header').classList.toggle('header-active')
+        document.querySelector('.header').classList.toggle('header-active');
+        mobileBut.parentElement.classList.toggle('max-z-index');
     })
     
 
@@ -66,7 +67,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const handleCloseModal = (modWindow) => {
             modWindow.classList.remove('modals-active');
-            document.body.style.overflowY = 'scroll';
+            document.body.classList.remove('overflow-y-hidden');
             setTimeout(() => modWindow.classList.add('scale-0'), 500)
 
             if (modWindow.querySelector('.modal')) {
@@ -77,7 +78,7 @@ window.addEventListener('DOMContentLoaded', function() {
     const handleOpenModal = (num) => {
         modalWindow[num].classList.remove('scale-0');
         modalWindow[num].classList.add('modals-active');
-            document.body.style.overflowY = 'hidden';
+            document.body.classList.add('overflow-y-hidden');
     }
 
     window.addEventListener('keydown', (e) => {
@@ -112,15 +113,31 @@ window.addEventListener('DOMContentLoaded', function() {
 
     
     cartOpen.addEventListener('click', e => {
-        cart.classList.toggle('cart-active');    
+        cart.classList.toggle('cart-active');
+        if (window.innerWidth <= 1000) {
+            document.body.classList.toggle('overflow-y-hidden');
+            cartOpen.classList.toggle('header__cart-active');
+            cartOpen.classList.toggle('max-z-index');
+        }    
     })
 
-    cartClose.addEventListener('click', e => cart.classList.remove('cart-active'));
+    cartClose.addEventListener('click', e => {
+        cart.classList.remove('cart-active')
+        if (window.innerWidth <= 1000) {
+            document.body.classList.remove('overflow-y-hidden');
+            cartOpen.classList.remove('header__cart-active');
+            cartOpen.classList.remove('max-z-index');
+        } 
+    });
 
     cartOrder.addEventListener('click', e => {
         handleOpenModal(3);
         cart.classList.remove('cart-active');
-
+        if (window.innerWidth <= 1000) {
+            document.body.classList.remove('overflow-y-hidden');
+            cartOpen.classList.remove('header__cart-active');
+            cartOpen.classList.remove('max-z-index');
+        }
     })
 
     orderClose.forEach(ordClose => ordClose.addEventListener('click', e => handleCloseModal(e.target.closest('.modals__window'))));
