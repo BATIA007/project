@@ -1273,7 +1273,7 @@ button {
 
 /*              PERKS               */
 .perks {
-  background: #000 url("../images/bg-perks.jpg") no-repeat center center;
+  background: #000 url("../images/perks/bg-perks.jpg") no-repeat center center;
   -webkit-background-size: cover;
           background-size: cover;
   padding: 90px 0 87px;
@@ -1398,7 +1398,7 @@ button {
 }
 
 .comments__slider-container {
-  background: #F8F8F8 url("../images/phone.png") no-repeat center center;
+  background: #F8F8F8 url("../images/comments-slider/phone.png") no-repeat center center;
   -webkit-background-size: contain;
           background-size: contain;
   position: relative;
@@ -2653,7 +2653,7 @@ button {
 
 .order__option-selected::after {
   content: '';
-  background: url("../images/chevron.svg") no-repeat;
+  background: url("../images/other/chevron.svg") no-repeat;
   display: block;
   position: absolute;
   right: 25px;

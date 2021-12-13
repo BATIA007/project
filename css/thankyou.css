@@ -5,7 +5,7 @@ body {
 .thankyou__header {
   width: 100%;
   min-height: 100vh;
-  background: #05141A url("../images/bg-thankyou.jpg") no-repeat center center;
+  background: #05141A url("../images/slider-main/bg-thankyou.jpg") no-repeat center center;
   -webkit-background-size: cover;
           background-size: cover;
 }
@@ -342,7 +342,7 @@ body {
   font-size: 28px;
   color: #fff;
   text-align: center;
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 
