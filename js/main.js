@@ -27,6 +27,13 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     
     for (let i = 0; i < modalInputs.length; i++) {
+        if (modalInputs[i].type == "tel") {
+            modalInputs[i].addEventListener('keydown', e => {
+                if (e.key === 'Backspace') return
+                /[\d$+()-\s]/.test(e.key) ? null : e.preventDefault()
+            })
+        }
+
         modalInputs[i].addEventListener('focus', e => {
             let modalInpInfo = modal.querySelectorAll('.modal__input-label');
             let modalSvg = modal.querySelectorAll('.modal__input-info');
@@ -34,9 +41,7 @@ window.addEventListener('DOMContentLoaded', function() {
             modalSvg[i].classList.add('modal__svg-focus');
             modalInpInfo[i].classList.add('hide-opacity');
         })
-    }
-    
-    for (let i = 0; i < modalInputs.length; i++) {
+
         modalInputs[i].addEventListener('blur', e => {
             let modalInpInfo = modal.querySelectorAll('.modal__input-label');
             let modalSvg = modal.querySelectorAll('.modal__input-info');
@@ -47,6 +52,7 @@ window.addEventListener('DOMContentLoaded', function() {
             modalSvg[i].classList.remove('modal__svg-focus');
         })
     }
+    
 
     
     // MODALS
@@ -259,75 +265,6 @@ window.addEventListener('DOMContentLoaded', function() {
     }
 
     }
-
-
-
-
-    // SELECT
-    let selectWrapers = document.querySelectorAll('.order__select');
-    let deliveryText = document.getElementById('order-delivery-text');
-
-    for (let select of selectWrapers) {
-        let selects = select.querySelectorAll('.order__option');
-        let selectActive = select.querySelector('.order__option-selected')
-        let isActive = false;
-
-        if (selectActive.classList.contains('select-delivery')) {
-            let activeSelectText = selectActive.querySelector('.order__option-text');
-            deliveryText.textContent = 'Доставка ' + activeSelectText.textContent + ':';
-        }
-
-
-        for (let sel of selects) {
-            sel.addEventListener('click', e => {
-                if (!sel.classList.contains('order__option-selected')) {
-                    selectActive.classList.remove('order__option-selected');
-                    sel.classList.add('order__option-selected');
-                    selectActive = sel;
-                    
-                    
-                    let offset = 0;
-    
-                    for (let sel of selects) {
-                        if (!isActive) {
-                            offset += 62;
-                            select.classList.add('max-z-index')
-                        } else if ( isActive) {
-                            offset = 0;
-                            select.classList.remove('max-z-index')
-                        }
-                        sel.style.top = offset + 'px';
-                    }
-    
-                    offset = 0;
-                    isActive = !isActive;
-
-
-                    if (selectActive.classList.contains('select-delivery')) {
-                        let activeSelectText = selectActive.querySelector('.order__option-text');
-                        deliveryText.textContent = 'Доставка ' + activeSelectText.textContent + ':';
-                    }
-            } else {
-                let offset = 0;
-                for (let sel of selects) {
-                    
-                    if (!sel.classList.contains('order__option-selected') && !isActive) {
-                        select.classList.add('max-z-index')
-                        offset += 62;
-                    } else if (!sel.classList.contains('order__option-selected') && isActive) {
-                        select.classList.remove('max-z-index')
-                        offset = 0;
-                    }
-    
-                    sel.classList.contains('order__option-selected') ? null : sel.style.top = offset + 'px';
-                }
-                offset = 0;
-                isActive = !isActive;
-            }
-            })
-        }
-    }
-
 
         // CART
 
@@ -646,7 +583,10 @@ window.addEventListener('DOMContentLoaded', function() {
             but2.disabled = false;
         }
 
+        calculateOrderPrice();
+    }
 
+    function calculateOrderPrice() {
         let price = 0;
         let orderPricing = 0;
         for (let key in cartMilatex) {
@@ -661,8 +601,78 @@ window.addEventListener('DOMContentLoaded', function() {
 
         orderPrice.textContent = price + ' грн';
         orderAllPrice.textContent = orderPricing + ' грн';
-
     }
 
     checkOrder()
+
+
+        // SELECT
+        let selectWrapers = document.querySelectorAll('.order__select');
+        let deliveryText = document.getElementById('order-delivery-text');
+        let deliveryPrice = document.getElementById('order-delivery')
+    
+        for (let select of selectWrapers) {
+            let selects = select.querySelectorAll('.order__option');
+            let selectActive = select.querySelector('.order__option-selected')
+            let isActive = false;
+    
+            if (selectActive.classList.contains('select-delivery')) {
+                let activeSelectText = selectActive.querySelector('.order__option-text');
+                deliveryText.textContent = 'Доставка ' + activeSelectText.textContent + ':';
+                deliveryPrice.textContent = selectActive.dataset.deliveryprice + ' грн';
+                calculateOrderPrice();
+            }
+    
+    
+            for (let sel of selects) {
+                sel.addEventListener('click', e => {
+                    if (!sel.classList.contains('order__option-selected')) {
+                        selectActive.classList.remove('order__option-selected');
+                        sel.classList.add('order__option-selected');
+                        selectActive = sel;
+                        
+                        
+                        let offset = 0;
+        
+                        for (let sel of selects) {
+                            if (!isActive) {
+                                offset += 62;
+                                select.classList.add('max-z-index')
+                            } else if ( isActive) {
+                                offset = 0;
+                                select.classList.remove('max-z-index')
+                            }
+                            sel.style.top = offset + 'px';
+                        }
+        
+                        offset = 0;
+                        isActive = !isActive;
+    
+    
+                        if (selectActive.classList.contains('select-delivery')) {
+                            let activeSelectText = selectActive.querySelector('.order__option-text');
+                            deliveryText.textContent = 'Доставка ' + activeSelectText.textContent + ':';
+                            deliveryPrice.textContent = selectActive.dataset.deliveryprice + ' грн';
+                            calculateOrderPrice();
+                        }
+                } else {
+                    let offset = 0;
+                    for (let sel of selects) {
+                        
+                        if (!sel.classList.contains('order__option-selected') && !isActive) {
+                            select.classList.add('max-z-index')
+                            offset += 62;
+                        } else if (!sel.classList.contains('order__option-selected') && isActive) {
+                            select.classList.remove('max-z-index')
+                            offset = 0;
+                        }
+        
+                        sel.classList.contains('order__option-selected') ? null : sel.style.top = offset + 'px';
+                    }
+                    offset = 0;
+                    isActive = !isActive;
+                }
+                })
+            }
+        }
 })

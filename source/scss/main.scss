@@ -616,6 +616,39 @@ button {
         }
     }
 
+    &__tab-svg {
+        display: flex;
+        align-items: center;
+        position: relative;
+        min-width: 59px;
+        min-height: 45px;
+
+        &.catalog__icon {
+            &::after {
+                background-color: #D3ECF9;
+                left: 13px;
+            }
+        }
+
+        img {
+            position: absolute;
+            z-index: 10;
+            left: 0;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            background-color: #fff;
+            position: absolute;
+            top: 0px;
+            right: 5px;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+        }
+    }
+
     &__categorie-active {
             background-color: rgba(78, 180, 230, 0.25);
             border: 1px solid rgba(78, 180, 230, 0.8);
@@ -898,7 +931,7 @@ button {
         position: relative;
     }
 
-    .svg-icon {
+    img {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -1356,14 +1389,15 @@ button {
         user-select: none;
         cursor: pointer;
 
-        path {
+        use {
             transition: .2s;
+            fill: white;
         }
 
-        &:hover path {
+        &:hover use {
             fill: rgba(255, 255, 255, 0.644);
         }
-        &:active path {
+        &:active use {
             fill: rgba(255, 255, 255, 0.444);
         }
     }
@@ -1542,12 +1576,12 @@ button {
         user-select: none;
         pointer-events: none;
         transition: all .5s;
+        --circle-color: #E2EAEF;
+        --icon-color: #114965;
 
-        circle {
+        use {
             transition: .5s;
-        }
-        path {
-            transition: .5s;
+            fill: var(--circle-color);
         }
     }
 
@@ -1558,11 +1592,9 @@ button {
     }
 
     &__svg-focus {
-        circle {
-            fill: #4EB5E7 !important;
-        }
-        path {
-            fill: #fff;
+        use {
+            --circle-color: #4EB5E7;
+            --icon-color: #fff
         }
     }
 
@@ -2289,11 +2321,50 @@ button {
             text-align: center;
             align-items: center;
             justify-content: center;
+        }
 
-            svg {
-                transform: scale(0.7);
-                min-width: 42px;
-                min-height: 31.5px;
+        &__list {
+            .catalog__link:last-child {
+                img {
+                    width: 42px;
+                    height: 38px;
+                }
+            }
+        }
+
+        &__tab-svg {
+            min-width: 30px;
+            min-height: 30px;
+
+            &.catalog__icon {
+                min-width: 57px;
+                min-height: 45px;
+
+                img {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                &::after {
+                    left: 13px;
+                    transform: translateY(-50%);
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+
+            img {
+                width: 26px;
+                height: 26px;
+                margin-left: 2px;
+            }
+
+            &::after {
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 30px;
+                height: 30px;
             }
         }
 

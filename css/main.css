@@ -951,6 +951,44 @@ button {
   background-color: #cde7f398;
 }
 
+.catalog__tab-svg {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  min-width: 59px;
+  min-height: 45px;
+}
+
+.catalog__tab-svg.catalog__icon::after {
+  background-color: #D3ECF9;
+  left: 13px;
+}
+
+.catalog__tab-svg img {
+  position: absolute;
+  z-index: 10;
+  left: 0;
+}
+
+.catalog__tab-svg::after {
+  content: '';
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  width: 45px;
+  height: 45px;
+  -webkit-border-radius: 50%;
+          border-radius: 50%;
+}
+
 .catalog__categorie-active {
   background-color: rgba(78, 180, 230, 0.25);
   border: 1px solid rgba(78, 180, 230, 0.8);
@@ -1339,7 +1377,7 @@ button {
   position: relative;
 }
 
-.perks .svg-icon {
+.perks img {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1947,17 +1985,18 @@ button {
   cursor: pointer;
 }
 
-.close-modal path {
+.close-modal use {
   -webkit-transition: .2s;
   -o-transition: .2s;
   transition: .2s;
+  fill: white;
 }
 
-.close-modal:hover path {
+.close-modal:hover use {
   fill: rgba(255, 255, 255, 0.644);
 }
 
-.close-modal:active path {
+.close-modal:active use {
   fill: rgba(255, 255, 255, 0.444);
 }
 
@@ -2211,18 +2250,15 @@ button {
   -webkit-transition: all .5s;
   -o-transition: all .5s;
   transition: all .5s;
+  --circle-color: #E2EAEF;
+  --icon-color: #114965;
 }
 
-.modal__input-info circle {
+.modal__input-info use {
   -webkit-transition: .5s;
   -o-transition: .5s;
   transition: .5s;
-}
-
-.modal__input-info path {
-  -webkit-transition: .5s;
-  -o-transition: .5s;
-  transition: .5s;
+  fill: var(--circle-color);
 }
 
 .modal__input-label {
@@ -2233,12 +2269,10 @@ button {
   color: #48545A;
 }
 
-.modal__svg-focus circle {
-  fill: #4EB5E7 !important;
-}
-
-.modal__svg-focus path {
-  fill: #fff;
+.modal__svg-focus use {
+  --circle-color: #4EB5E7;
+  --icon-color: #fff
+        ;
 }
 
 .modal__input {
@@ -3161,12 +3195,43 @@ button {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  .catalog__categorie svg {
-    -webkit-transform: scale(0.7);
-        -ms-transform: scale(0.7);
-            transform: scale(0.7);
-    min-width: 42px;
-    min-height: 31.5px;
+  .catalog__list .catalog__link:last-child img {
+    width: 42px;
+    height: 38px;
+  }
+  .catalog__tab-svg {
+    min-width: 30px;
+    min-height: 30px;
+  }
+  .catalog__tab-svg.catalog__icon {
+    min-width: 57px;
+    min-height: 45px;
+  }
+  .catalog__tab-svg.catalog__icon img {
+    width: 35px;
+    height: 35px;
+  }
+  .catalog__tab-svg.catalog__icon::after {
+    left: 13px;
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+    width: 45px;
+    height: 45px;
+  }
+  .catalog__tab-svg img {
+    width: 26px;
+    height: 26px;
+    margin-left: 2px;
+  }
+  .catalog__tab-svg::after {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
   }
   .catalog__categorie-info {
     font-size: 14px;
