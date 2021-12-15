@@ -1,23 +1,5 @@
 window.addEventListener('DOMContentLoaded', function() {
-    var html = document.documentElement;
-    var script = document.createElement("script");
-    script.src = "/path/to/fontfaceobserver.js";
-    script.async = true;
 
-    script.onload = function () {
-      var regular = new FontFaceObserver("Source Serif");
-      var bold = new FontFaceObserver("Source Serif", {
-        weight: "bold"
-      });
-
-      Promise.all([
-        regular.load(),
-        bold.load()
-      ]).then(function () {
-        html.classList.add("fonts-loaded");
-      });
-    };
-    document.head.appendChild(script);
     
     const tabs = document.querySelectorAll('.catalog__tabs');
     const modal = document.querySelector('.modals');
