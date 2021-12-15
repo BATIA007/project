@@ -77,6 +77,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local("Montserrat"), url("../fonts/Montserrat-Regular.ttf");
 }
 
@@ -84,6 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
+  font-display: swap;
   src: local("Montserrat"), url("../fonts/Montserrat-Medium.ttf");
 }
 
@@ -91,6 +93,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 600;
+  font-display: swap;
   src: local("Montserrat"), url("../fonts/Montserrat-SemiBold.ttf");
 }
 
@@ -98,6 +101,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: local("Montserrat"), url("../fonts/Montserrat-Bold.ttf");
 }
 
@@ -105,6 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
   src: local("Montserrat"), url("../fonts/Montserrat-Black.ttf");
 }
 
