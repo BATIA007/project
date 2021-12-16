@@ -2606,6 +2606,7 @@ button {
             width: 100% !important;
             padding: 22.5px 0 !important;
             max-width: none !important;
+            min-width: auto;
         }
 
         &__bottom {
@@ -3232,6 +3233,9 @@ button {
     .order {
         margin: 70px auto;
         width: calc(100vw - 30px);
+        .catalog__show {
+            min-width: auto;
+        }
     }
 
     .notification {
@@ -3241,6 +3245,10 @@ button {
 
     .cart {
         
+        .catalog__show {
+            min-width: auto;
+        }
+
         &__wrapper {
             width: calc(100% - 30px);
             margin-left: 15px;
@@ -3268,12 +3276,13 @@ button {
 
     .order {
         &__item {
-            text-align: center;
-            flex-direction: column;
-            row-gap: 15px;
-        }
-        &__price {
-            text-align: center;
+            padding: 20px 2px 20px 5px;
+            img {
+                width: 100px;
+                height: 100px;
+            }
+            
+            column-gap: 15px;
         }
         &__okay {
             column-gap: 10px;
@@ -3292,10 +3301,6 @@ button {
             
         }
 
-        &__quantity {
-            margin: 0 auto;
-        }
-
         &__close {
             position: absolute;
             right: 20px;
@@ -3304,13 +3309,21 @@ button {
 
             &:active {
                 transition: .1s;
-                transform: rotate(45deg) scale(0.9);
+                transform: rotate(45deg) translateY(-50%) scale(0.9);
             }
         }
 
         &__controllers {
             position: relative;
-            justify-content: center;
+            .modal__quantity {
+                width: 100px;
+                height: 38px;
+            }
+            .modal__minus, .modal__plus {
+                width: 20px;
+                height: 20px;
+                font-size: 24px;
+            }
         }
     }
 }
@@ -3327,8 +3340,11 @@ button {
         }
 
         &__list {
-            grid-template-columns: 1fr;
-            margin-bottom: 20px;
+            column-gap: 5px;
+        }
+
+        &__link {
+            column-gap: 5px;
         }
 
         &__price {
@@ -3352,6 +3368,27 @@ button {
     .header {
         &__logo {
             transform: scale(0.8);
+        }
+    }
+    .catalog {
+        &__main {
+            padding: 15px 5px 16px;
+        }
+
+        &__item-info {
+            padding: 5px;
+            column-gap: 10px;
+            font-size: 13px;
+        }
+
+        &__material, &__structure {
+            font-size: 13px;
+        }
+
+        &__tab-svg.catalog__icon {
+            transform: scale(0.7);
+            min-width: 44px;
+            min-height: 31px;
         }
     }
     .modal {
@@ -3391,6 +3428,7 @@ button {
 }
 
 .catalog__none {
+    margin-top: 30px;
     font-size: 36px;
     text-align: center;
     font-weight: 400;

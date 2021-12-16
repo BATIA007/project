@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="css/font.css">
     <link rel="stylesheet" href="css/font.css" media="print" onload="this.media='all'">
@@ -19,20 +20,20 @@
                 <div class="swiper-slide">
                     <picture>
                         <source srcset="images/slider-main/background.webp" type="image/webp" class="slider__image">
-                        <img width="100%" height="100%" src="images/slider-main/background.png" alt="background" class="slider__image">
+                        <img src="images/slider-main/background.png" alt="background" class="slider__image">
                     </picture>
                     <div class="slider__text">
-                        <h2 class="header__title">При покупке 2-х комплектов<br>
-                            <span class="header__title-aqua">2 подушки в подарок!</span>
+                        <h2 data-aos="fade-down" data-aos-duration="600" class="header__title">При покупке 2-х комплектов<br>
+                            <span data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" class="header__title-aqua">2 подушки в подарок!</span>
                         </h2>
-                        <p class="header__subtitle">*  Акция действует до 10 октября 2021 года включительно</p>
-                        <a href="#catalog" class="header__button">Заказать и получить подарок</a>
+                        <p data-aos="fade-down" data-aos-duration="600" data-aos-delay="800" class="header__subtitle">*  Акция действует до 10 октября 2021 года включительно</p>
+                        <a data-aos="fade-down" data-aos-duration="600" data-aos-delay="800" href="#catalog" class="header__button">Заказать и получить подарок</a>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <picture>
                         <source srcset="images/slider-main/slide-2.webp" type="image/webp" class="slider__image">
-                        <img width="100%" height="100%" src="images/slider-main/slide-2.jpg" alt="background" class="slider__image">
+                        <img src="images/slider-main/slide-2.jpg" alt="background" class="slider__image">
                     </picture>
                     <div class="slider__text">
                         <h2 class="header__title">Распродажа постельного белья
@@ -46,7 +47,7 @@
                 <div class="swiper-slide">
                     <picture>
                         <source srcset="images/slider-main/bg-thankyou.webp" type="image/webp" class="slider__image">
-                        <img width="100%" height="100%" src="images/slider-main/bg-thankyou.jpg" alt="background" class="slider__image">
+                        <img src="images/slider-main/bg-thankyou.jpg" alt="background" class="slider__image">
                     </picture>
                     <div class="slider__text">
                         <h2 class="header__title">При покупке 2-х комплектов<br>
@@ -220,9 +221,9 @@
     <main>
         <section id = 'catalog' class="catalog" data-categories="Бязь Ранфорс Сатин Страйп-сатин Прочий текстиль">
             <div class="wrapper catalog__wrapper">
-                <h1 class="catalog__title">Каталог</h1>
+                <h1 data-aos="fade-down" data-aos-duration="600" class="catalog__title">Каталог</h1>
                 <div class="catalog__scroll">
-                    <ul class="catalog__categories">
+                    <ul data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" class="catalog__categories">
                         <li class="catalog__categorie catalog__categorie-active">
                             <span class="catalog__tab-svg">
                                 <img width="38" height="38" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="tab">  
@@ -239,7 +240,7 @@
                             <span class="catalog__tab-svg">
                                 <img width="38" height="38" loading="lazy" src="images/svg/catalog-tab-3.svg" alt="tab">  
                             </span>                      
-                            <span width="38" height="38" class="catalog__categorie-info">Сатин</span>                            
+                            <span class="catalog__categorie-info">Сатин</span>                            
                         </li>
                         <li class="catalog__categorie catalog__categorie-active">
                             <span class="catalog__tab-svg">
@@ -257,9 +258,9 @@
                 </div>
                 <p class="catalog__none">Выберите категорию!</p>
                 <div class="catalog__items">
-                    <div class="catalog__item hide__catalog" data-serial = '1' data-category = 'Бязь'>
+                    <div data-aos="fade-down" data-aos-duration="700" data-aos-delay="400" class="catalog__item hide__catalog" data-serial = '1' data-category = 'Бязь'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -288,7 +289,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -297,7 +298,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -306,7 +307,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -315,7 +316,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -330,9 +331,9 @@
                             <button class="catalog__buy">Купить со скидкой</button>
                         </div>
                     </div>
-                    <div class="catalog__item hide__catalog" data-serial = '2' data-category = 'Страйп-сатин'>
+                    <div data-aos="fade-down" data-aos-duration="700" data-aos-delay="400" class="catalog__item hide__catalog" data-serial = '2' data-category = 'Страйп-сатин'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item-1.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item-1.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -361,7 +362,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -370,7 +371,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -379,7 +380,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -388,7 +389,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -403,9 +404,9 @@
                             <button class="catalog__buy">Купить со скидкой</button>
                         </div>
                     </div>
-                    <div class="catalog__item hide__catalog" data-serial = '3' data-category = 'Прочий текстиль'>
+                    <div data-aos="fade-down" data-aos-duration="700" data-aos-delay="400" class="catalog__item hide__catalog" data-serial = '3' data-category = 'Прочий текстиль'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -434,7 +435,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -443,7 +444,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -452,7 +453,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -461,7 +462,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -476,9 +477,9 @@
                             <button class="catalog__buy">Купить со скидкой</button>
                         </div>
                     </div>
-                    <div class="catalog__item hide__catalog" data-serial = '4' data-category = 'Ранфорс'>
+                    <div data-aos="fade-down" data-aos-duration="700" class="catalog__item hide__catalog" data-serial = '4' data-category = 'Ранфорс'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -507,7 +508,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -516,7 +517,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -525,7 +526,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -534,7 +535,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -549,9 +550,9 @@
                             <button class="catalog__buy">Купить со скидкой</button>
                         </div>
                     </div>
-                    <div class="catalog__item hide__catalog" data-serial = '5' data-category = 'Сатин'>
+                    <div data-aos="fade-down" data-aos-duration="700" class="catalog__item hide__catalog" data-serial = '5' data-category = 'Сатин'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item-1.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item-1.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -580,7 +581,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -589,7 +590,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -598,7 +599,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -607,7 +608,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -622,9 +623,9 @@
                             <button class="catalog__buy">Купить со скидкой</button>
                         </div>
                     </div>
-                    <div class="catalog__item hide__catalog" data-serial = '6' data-category = 'Страйп-сатин'>
+                    <div data-aos="fade-down" data-aos-duration="700" class="catalog__item hide__catalog" data-serial = '6' data-category = 'Страйп-сатин'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -653,7 +654,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -662,7 +663,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -671,7 +672,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -680,7 +681,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -695,9 +696,9 @@
                             <button class="catalog__buy">Купить со скидкой</button>
                         </div>
                     </div>
-                    <div class="catalog__item hide__catalog" data-serial = '7' data-category = 'Бязь'>
+                    <div data-aos="fade-down" data-aos-duration="700" class="catalog__item hide__catalog" data-serial = '7' data-category = 'Бязь'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -726,7 +727,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -735,7 +736,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -744,7 +745,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -753,7 +754,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -768,9 +769,9 @@
                             <button class="catalog__buy">Купить со скидкой</button>
                         </div>
                     </div>
-                    <div class="catalog__item hide__catalog" data-serial = '8' data-category = 'Бязь'>
+                    <div data-aos="fade-down" data-aos-duration="700" class="catalog__item hide__catalog" data-serial = '8' data-category = 'Бязь'>
                         <div class="catalog__top">
-                            <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
+                            <img loading="lazy" src="images/catalog-items/catalog-item-2.jpg" alt="catalog-item" class="catalog__image">
                             <span class="catalog__badge">-51%</span>
                             <div class="catalog__item-text">
                                 <div class="catalog__item-info">
@@ -799,7 +800,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -808,7 +809,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -817,7 +818,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -826,7 +827,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -851,25 +852,25 @@
         </section>
         <section class="perks">
             <div class="perks__wrapper wrapper">                                                                       
-                <h2 class="perks__title">НАМ ДОВЕРЯЮТ С 2008 ГОДА</h2>
+                <h2 data-aos="fade-down" data-aos-duration="600" class="perks__title">НАМ ДОВЕРЯЮТ С 2008 ГОДА</h2>
                 <div class="perks__items">
-                    <div class="perks__item">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" class="perks__item">
                         <div class="perks__icon-wrapper">
                             <div class="perks__icon">
                                 <img width="155" height="155" loading="lazy" src="images/svg/perks-circle.svg" alt="perks-circle">
-                                <img width="auto" height="auto" loading="lazy" src="images/svg/perks-icon-1.svg" alt="perks-icon-1">                                                                                                        
+                                <img  loading="lazy" src="images/svg/perks-icon-1.svg" alt="perks-icon-1">                                                                                                        
                             </div>
                         </div>
                         <h5 class="perks__item-title">Доставка по всей<br>
                             <span class="perks__aqua">Украине</span></h5>
                         <p class="perks__items-subtitle">После Вашей заявки, мы перезвоним и сообщим точный срок доставки</p>                                                      
                     </div>
-                    <div class="perks__item">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" class="perks__item">
                         <div class="perks__icon-wrapper">
                             <div class="perks__icon">
                                 <div class="perks__icon">
                                     <img width="155" height="155" loading="lazy" src="images/svg/perks-circle.svg" alt="perks-circle">
-                                    <img width="auto" height="auto" loading="lazy" src="images/svg/perks-icon-2.svg" alt="perks-icon-2">                                                                                                        
+                                    <img  loading="lazy" src="images/svg/perks-icon-2.svg" alt="perks-icon-2">                                                                                                        
                                 </div>                                                                                                                                                                             
                             </div>
                         </div>
@@ -877,12 +878,12 @@
                             <span class="perks__aqua">материалы</span></h5>
                         <p class="perks__items-subtitle">Постельное белье не выцветает, не линяет и не деформируется</p>                                                      
                     </div>
-                    <div class="perks__item">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" class="perks__item">
                         <div class="perks__icon-wrapper">
                             <div class="perks__icon">
                                 <div class="perks__icon">
                                     <img width="155" height="155" loading="lazy" src="images/svg/perks-circle.svg" alt="perks-circle">
-                                    <img width="auto" height="auto" loading="lazy" src="images/svg/perks-icon-3.svg" alt="perks-icon-3">                                                                                                        
+                                    <img  loading="lazy" src="images/svg/perks-icon-3.svg" alt="perks-icon-3">                                                                                                        
                                 </div>                                                                                                                                                                                                                
                             </div>
                         </div>
@@ -895,10 +896,10 @@
         </section>
         <section class="comments">
             <div class="comments__wrapper">
-                <h2 class="comments__title">Отзывы о нас</h2>
-                <p class="comments__subtitle">Если вы еще не заказали и сомневаетесь, 
+                <h2 data-aos="fade-down" data-aos-duration="600" class="comments__title">Отзывы о нас</h2>
+                <p data-aos="fade-down" data-aos-duration="600" data-aos-delay="300" class="comments__subtitle">Если вы еще не заказали и сомневаетесь, 
                     прочитайте отзывы от наших счастливых клиентов!</p>
-                <div class="comments__slider-container">
+                <div data-aos="fade-down" data-aos-duration="900" data-aos-delay="400" class="comments__slider-container">
                     <div class="comments__time">
                         <span class="comments__now-time">9:41</span>
                         <span class="comments__time-icon">
@@ -910,13 +911,13 @@
                         <div class="swiper comments__slider">
                             <div class="swiper-wrapper">
                             <div class="swiper-slide comments__slide">
-                                <img width="100%" height="100%" loading="lazy" src="images/comments-slider/comments-slide-1.png" alt="comments-image" class="comments__image">
+                                <img loading="lazy" src="images/comments-slider/comments-slide-1.png" alt="comments-image" class="comments__image">
                             </div>
                             <div class="swiper-slide comments__slide">
-                                <img width="100%" height="100%" loading="lazy" src="images/comments-slider/comments-slide-2.png" alt="comments-image" class="comments__image">
+                                <img loading="lazy" src="images/comments-slider/comments-slide-2.png" alt="comments-image" class="comments__image">
                             </div>
                             <div class="swiper-slide comments__slide">
-                                <img width="100%" height="100%" loading="lazy" src="images/comments-slider/comments-slide-1.png" alt="comments-image" class="comments__image">
+                                <img loading="lazy" src="images/comments-slider/comments-slide-1.png" alt="comments-image" class="comments__image">
                             </div>
                             </div>
                         </div>
@@ -939,22 +940,22 @@
                     </div>
                 </div>
                 <div class="comments__icons">
-                    <div class="comments__icon comments__icon-1">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="200" class="comments__icon comments__icon-1">
                         <img width="177" height="177" loading="lazy" src="images/svg/comments-icon-1.svg" alt="comments-icon">                              
                     </div>
-                    <div class="comments__icon comments__icon-2">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="600" class="comments__icon comments__icon-2">
                         <img width="225" height="222" loading="lazy" src="images/svg/comments-icon-2.svg" alt="comments-icon">>                             
                     </div>
-                    <div class="comments__icon comments__icon-3">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="700" class="comments__icon comments__icon-3">
                         <img width="149" height="149" loading="lazy" src="images/svg/comments-icon-3.svg" alt="comments-icon">                          
                     </div>
-                    <div class="comments__icon comments__icon-4">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="100" class="comments__icon comments__icon-4">
                         <img width="183" height="183" loading="lazy" src="images/svg/comments-icon-4.svg" alt="comments-icon">                           
                     </div>
-                    <div class="comments__icon comments__icon-5">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="200" class="comments__icon comments__icon-5">
                         <img width="170" height="171" loading="lazy" src="images/svg/comments-icon-5.svg" alt="comments-icon">                            
                     </div>
-                    <div class="comments__icon comments__icon-6">
+                    <div data-aos="fade-down" data-aos-duration="600" data-aos-delay="500" class="comments__icon comments__icon-6">
                         <img width="183" height="183" loading="lazy" src="images/svg/comments-icon-6.svg" alt="comments-icon">                            
                     </div>                   
                 </div>
@@ -973,7 +974,7 @@
                         <h4 class="modal__title">Вы хотите купить</h4>
                         <div class="modal__main">
                             <div class="modal__left">
-                                <img width="100%" height="100%" loading="lazy" src="images/catalog-items/catalog-item-1.jpg" alt="catalog-item" class="catalog__image">
+                                <img loading="lazy" src="images/catalog-items/catalog-item-1.jpg" alt="catalog-item" class="catalog__image">
                                 <span class="catalog__badge modal__badge">-51%</span>
                                 <div class="catalog__item-text modal__item-text">
                                     <div class="catalog__item-info modal__item-info">
@@ -1001,7 +1002,7 @@
                             <ul class="catalog__list">
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-tab-1.svg" alt="catalog-icon-1">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Бязь</p>
@@ -1010,7 +1011,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-1.svg" alt="catalog-icon-2">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Пододеяльник</p>
@@ -1019,7 +1020,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-2.svg" alt="catalog-icon-3">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Простыня</p>
@@ -1028,7 +1029,7 @@
                                 </li>
                                 <li class="catalog__link">
                                     <span class="catalog__icon catalog__tab-svg">
-                                        <img width="auto" height="auto" loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
+                                        <img  loading="lazy" src="images/svg/catalog-material-3.svg" alt="catalog-icon-4">                                        
                                     </span>
                                     <div class="catalog__composition-info">
                                         <p class="catalog__material">Наволочка</p>
@@ -1038,7 +1039,7 @@
                             </ul>
                             <div class="modal__price">
                                 <p class="modal__text-price">Цена:</p>
-                                <p class="modal__prices"><span class="modal__full-price">1498 грн</span> <span class="modal__discount-price">599 грн</span></p>
+                                <p class="modal__prices"><span class="modal__full-price">1498 грн</span> <span class="modal__discount-price"></span></p>
                             </div>
                             <div class="modal__add">
                                 <div class="modal__quantity">
@@ -1420,5 +1421,9 @@
 <script src="js/main.js"></script>
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="js/slider.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

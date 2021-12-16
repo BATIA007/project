@@ -99,17 +99,47 @@ window.addEventListener('DOMContentLoaded', function() {
         close.addEventListener('click', e => handleCloseModal(e.target.closest('.modals__window')));
     }
 
+    const generateLinkItem = (img, title, text) => `<li class="catalog__link">
+    <span class="catalog__icon catalog__tab-svg">
+        <img  loading="lazy" src="${img}" alt="catalog-icon-1">                                        
+    </span>
+    <div class="catalog__composition-info">
+        <p class="catalog__material">${title}</p>
+        <p class="catalog__structure">${text}</p>
+    </div>
+</li>`
+
     for (let but of butBuy) {
         but.addEventListener('click', event => {
             const mainModal = document.querySelector('.modal__main');
             const item = event.target.closest('.catalog__item');
 
+            const img = item.querySelector('.catalog__image').getAttribute('src');
+            const itemTitle = item.querySelector('.catalog__item-title').textContent;          
+            const list = item.querySelector('.catalog__list');
+            const fullPrice = item.querySelector('.catalog__full-price').textContent;
+            const discountPrice = item.querySelector('.catalog__discount-price');
             const id = item.dataset.serial;
+            
+            
+
+            const modalList = mainModal.querySelector('.catalog__list');
+            const links = list.children;
+
             mainModal.setAttribute('data-serial', id);
-            mainModal.querySelector('.catalog__image').setAttribute('src', item.querySelector('.catalog__image').getAttribute('src'));
-            mainModal.querySelector('.modal__item-title').textContent = item.querySelector('.catalog__item-title').textContent;
-            mainModal.querySelector('.modal__full-price').textContent = item.querySelector('.catalog__full-price').textContent;
-            mainModal.querySelector('.modal__discount-price').textContent = item.querySelector('.catalog__discount-price').textContent;
+            mainModal.querySelector('.catalog__image').setAttribute('src', img);
+            mainModal.querySelector('.modal__item-title').textContent = itemTitle;
+            mainModal.querySelector('.modal__full-price').textContent = fullPrice;
+
+            modalList.innerHTML = ''
+            for (let i = 0; i < links.length; i++) {
+                const imgSvg = links[i].querySelector('img').getAttribute('src');
+                const title = links[i].querySelector('.catalog__material').textContent;
+                const text = links[i].querySelector('.catalog__structure').textContent;
+                modalList.insertAdjacentHTML('beforeend', generateLinkItem(imgSvg, title, text))
+            }
+            
+            if (discountPrice) mainModal.querySelector('.modal__discount-price').textContent = discountPrice.textContent;
 
             handleOpenModal(0)
         })
@@ -285,7 +315,7 @@ window.addEventListener('DOMContentLoaded', function() {
                                     <h5 class="order__name">${name}</h5>
                                     <p class="order__price">
                                         <span class="order__full-price">${fullPrice}</span>
-                                        <span class="order__discounte-price">${discountPrice}</span>
+                                        ${checkDiscount(discountPrice)}
                                     </p>
                                     <div class="order__controllers">
                                         <div class="modal__quantity">
@@ -300,6 +330,12 @@ window.addEventListener('DOMContentLoaded', function() {
                                 </div>
                             </li>
     `
+
+    function checkDiscount(discount) {
+        if (discount) {
+            return `<span class="order__discounte-price">${discount}</span>`
+        }
+    }
 
     function addToCart(event) {
         const item = event.target.closest('.modal__main');
@@ -521,7 +557,7 @@ window.addEventListener('DOMContentLoaded', function() {
         <h5 class="order__name">${name}</h5>
         <p class="order__price">
             <span class="order__full-price">${fullPrice} </span>
-            <span class="order__discounte-price">${discountPrice}</span>
+            ${checkDiscountOrder(discountPrice)}
         </p>
         <div class="order__controllers">
             <div class="modal__quantity">
@@ -536,6 +572,12 @@ window.addEventListener('DOMContentLoaded', function() {
     </div>
     </li>
     `
+
+    function checkDiscountOrder(discuount) {
+        if (discuount) {
+            return `<span class="order__discounte-price">${discuount}</span>`
+        }
+    }
 
     const order = modal.querySelector('.order');
     const orderList = order.querySelector('.order__items');
@@ -590,7 +632,12 @@ window.addEventListener('DOMContentLoaded', function() {
         let price = 0;
         let orderPricing = 0;
         for (let key in cartMilatex) {
-            price = price + (Number(cartMilatex[key].discountPrice.replace(/[^+\d]/g, '')) * cartMilatex[key].amount);
+            if (cartMilatex[key].discountPrice) {
+                price = price + (Number(cartMilatex[key].discountPrice.replace(/[^+\d]/g, '')) * cartMilatex[key].amount);
+            } else {
+                price = price + (Number(cartMilatex[key].fullPrice.replace(/[^+\d]/g, '')) * cartMilatex[key].amount);
+            }
+            
         }
 
         orderPricing = price + Number(delivery.textContent.replace(/[^+\d]/g, ''));
