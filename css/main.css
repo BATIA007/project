@@ -73,46 +73,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local("Montserrat"), url("../fonts/Montserrat-Regular.ttf");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: local("Montserrat"), url("../fonts/Montserrat-Medium.ttf");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 600;
-  font-display: swap;
-  src: local("Montserrat"), url("../fonts/Montserrat-SemiBold.ttf");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: local("Montserrat"), url("../fonts/Montserrat-Bold.ttf");
-}
-
-@font-face {
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 900;
-  font-display: swap;
-  src: local("Montserrat"), url("../fonts/Montserrat-Black.ttf");
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -121,7 +81,7 @@ body {
   overflow-x: hidden;
   background-color: #000;
   font-size: 14px;
-  font-family: "Montserrat";
+  font-family: "Montserrat", "Arial", sans-serif;
   font-weight: 400;
   color: #000;
 }
@@ -3053,14 +3013,8 @@ button {
   .catalog__categorie svg {
     min-width: 60px;
   }
-  .catalog__items {
-    -ms-grid-columns: 1fr 1fr;
-        grid-template-columns: 1fr 1fr;
-  }
-  .catalog__items .catalog__item:nth-child(2n - 1) {
-    -ms-grid-column-align: right;
-        justify-self: right;
-    width: 100%;
+  .catalog__wrapper {
+    width: 90%;
   }
 }
 
@@ -3084,6 +3038,16 @@ button {
   }
   .review {
     width: 90%;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .catalog__wrapper {
+    width: 75%;
+  }
+  .catalog__items {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -3319,6 +3283,11 @@ button {
     padding: 21.5px 0;
     line-height: 175%;
     width: 100%;
+    min-width: 400px;
+  }
+  .catalog .gradient-wrap {
+    width: auto;
+    max-width: none;
   }
   .gradient-wrap {
     width: 100%;
@@ -4141,6 +4110,9 @@ button {
     width: -webkit-calc(100% - 30px);
     width: calc(100% - 30px);
     margin-left: 15px;
+  }
+  .catalog__show {
+    min-width: 250px;
   }
   .modal {
     margin: 70px auto;

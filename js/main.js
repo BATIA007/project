@@ -1,6 +1,4 @@
 window.addEventListener('DOMContentLoaded', function() {
-
-    
     const tabs = document.querySelectorAll('.catalog__tabs');
     const modal = document.querySelector('.modals');
     const modalInputs = document.querySelectorAll('.modal__input');
