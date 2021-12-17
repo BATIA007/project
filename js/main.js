@@ -170,7 +170,6 @@ window.addEventListener('DOMContentLoaded', function() {
         handleOpenModal(3);
         cart.classList.remove('cart-active');
         if (window.innerWidth <= 1000) {
-            document.body.classList.remove('overflow-y-hidden');
             cartOpen.classList.remove('header__cart-active');
             cartOpen.classList.remove('max-z-index');
         }

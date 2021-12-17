@@ -3448,6 +3448,9 @@ button {
   .order__title {
     padding-bottom: 0;
   }
+  .order .catalog__show {
+    min-width: auto;
+  }
   .cart .gradient-wrap {
     width: 100%;
     max-width: none;
